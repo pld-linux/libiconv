@@ -1,12 +1,12 @@
 Summary:	Character set conversion library
 Summary(pl):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.9.1
+Version:	1.9.2
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/pub/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	0c99a05e0c3c153bac1c960f78711155
+# Source0-md5:	6bc300365053c815b10b800a21e0bc7e
 URL:		http://www.haible.de/bruno/packages-libcharset.html
 BuildRequires:	autoconf
 BuildRequires:	automake
