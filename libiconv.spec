@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/pub/gnu/libiconv/%{name}-%{version}.tar.gz
+# Source0-md5:	fd2a95a4b79fbdc8ea55ad093a8bb6cf
 URL:		http://www.haible.de/bruno/packages-libcharset.html
 Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
