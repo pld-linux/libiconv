@@ -1,14 +1,13 @@
 Summary:	Character set conversion library
 Summary(pl):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.8
+Version:	1.9.1
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/pub/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	fd2a95a4b79fbdc8ea55ad093a8bb6cf
+# Source0-md5:	0c99a05e0c3c153bac1c960f78711155
 URL:		http://www.haible.de/bruno/packages-libcharset.html
-Patch0:		%{name}-DESTDIR.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -20,6 +19,9 @@ which don't have one, or whose implementation cannot convert from/to
 Unicode.
 
 %description -l pl
+Ta biblioteka dostarcza implementacjê iconv() do u¿ywania z systemami,
+które takiej funkcji nie posiadaj±, lub na których implementacja nie
+potrafi konwertowaæ z/do Unikodu.
 
 %package devel
 Summary:	libiconv header files
@@ -47,7 +49,6 @@ Pakiet ten zawiera statyczn± bibliotekê libiconv.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__aclocal} -I m4
@@ -57,26 +58,32 @@ Pakiet ten zawiera statyczn± bibliotekê libiconv.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog DESIGN NEWS NOTES PORTS README* THANKS
-%attr(755,root,root) %{_libdir}/*.so.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libiconv_plug.so
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/libcharset.h
+%attr(755,root,root) %{_libdir}/lib*[!g].so
 %{_libdir}/*.la
-%attr(755,root,root) %{_libdir}/*.so
+#%{_includedir}/iconv.h
+%{_includedir}/libcharset.h
+%{_includedir}/localcharset.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/*.a
+%{_libdir}/lib*.a
