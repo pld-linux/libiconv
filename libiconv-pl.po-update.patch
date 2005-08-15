@@ -1,0 +1,59 @@
+--- libiconv-1.10/po/pl.po.orig	2005-07-07 14:54:03.000000000 +0200
++++ libiconv-1.10/po/pl.po	2005-08-14 17:39:30.809455992 +0200
+@@ -5,10 +5,10 @@
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: libiconv 1.9.1\n"
++"Project-Id-Version: libiconv 1.10\n"
+ "Report-Msgid-Bugs-To: bug-gnu-libiconv@gnu.org\n"
+ "POT-Creation-Date: 2005-07-07 14:54+0200\n"
+-"PO-Revision-Date: 2003-10-13 22:56+0100\n"
++"PO-Revision-Date: 2005-08-14 17:33+0200\n"
+ "Last-Translator: Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+@@ -39,19 +39,19 @@
+ msgstr "Napisane przez %s.\n"
+ 
+ #: src/iconv.c:131 src/iconv.c:171 src/iconv.c:232
+-#, fuzzy, c-format
++#, c-format
+ msgid "iconv: %s:%u:%u: incomplete character or shift sequence\n"
+-msgstr "iconv: %s: niedokoñczony znak lub sekwencja shift\n"
++msgstr "iconv: %s:%u:%u: niedokoñczony znak lub sekwencja shift\n"
+ 
+ #: src/iconv.c:161 src/iconv.c:223
+-#, fuzzy, c-format
++#, c-format
+ msgid "iconv: %s:%u:%u: cannot convert\n"
+-msgstr "iconv: %s: nie mo¿na skonwertowaæ\n"
++msgstr "iconv: %s:%u:%u: nie mo¿na skonwertowaæ\n"
+ 
+ #: src/iconv.c:191 src/iconv.c:241
+-#, fuzzy, c-format
++#, c-format
+ msgid "iconv: %s:%u:%u: "
+-msgstr "iconv: %s: "
++msgstr "iconv: %s:%u:%u: "
+ 
+ #: src/iconv.c:253
+ #, c-format
+@@ -76,7 +76,7 @@
+ #: src/iconv.c:356
+ #, c-format
+ msgid "iconv: try '%s -l' to get the list of supported encodings\n"
+-msgstr ""
++msgstr "iconv: listê obs³ugiwanych kodowañ mo¿na uzyskaæ przez '%s -l'\n"
+ 
+ #: src/iconv.c:370
+ msgid "(stdin)"
+@@ -91,8 +91,3 @@
+ #, c-format
+ msgid "iconv: I/O error\n"
+ msgstr "iconv: b³±d wej./wyj.\n"
+-
+-#~ msgid ""
+-#~ "Usage: iconv [--binary] [-c] [-s] [-f fromcode] [-t tocode] [file ...]"
+-#~ msgstr ""
+-#~ "U¿ycie: iconv [--binary] [-c] [-s] [-f z_kodu] [-t do_kodu] [plik ...]"
