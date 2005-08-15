@@ -1,12 +1,13 @@
 Summary:	Character set conversion library
 Summary(pl):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.9.2
-Release:	2
+Version:	1.10
+Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	ftp://ftp.gnu.org/pub/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	6bc300365053c815b10b800a21e0bc7e
+Source0:	ftp://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
+# Source0-md5:	0d621d541e28ff053d8bbcf7215de3a4
+Patch0:		%{name}-pl.po-update.patch
 URL:		http://www.haible.de/bruno/packages-libcharset.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -52,6 +53,7 @@ Pakiet ten zawiera statyczn± bibliotekê libiconv.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub libcharset/autoconf
@@ -78,17 +80,23 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog DESIGN NEWS NOTES PORTS README* THANKS
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%attr(755,root,root) %{_libdir}/libiconv_plug.so
+#%attr(755,root,root) %{_bindir}/iconv
+%attr(755,root,root) %{_libdir}/libcharset.so.*.*.*
+%attr(755,root,root) %{_libdir}/libiconv.so.*.*.*
+%attr(755,root,root) %{_libdir}/preloadable_libiconv.so
+#%{_mandir}/man1/iconv.1*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*[!g].so
-%{_libdir}/*.la
+%attr(755,root,root) %{_libdir}/libcharset.so
+%attr(755,root,root) %{_libdir}/libiconv.so
+%{_libdir}/libcharset.la
+%{_libdir}/libiconv.la
 %{_includedir}/iconv.h
 %{_includedir}/libcharset.h
 %{_includedir}/localcharset.h
+%{_mandir}/man3/iconv*.3*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libcharset.a
