@@ -1,59 +1,317 @@
---- libiconv-1.10/po/pl.po.orig	2005-07-07 14:54:03.000000000 +0200
-+++ libiconv-1.10/po/pl.po	2005-08-14 17:39:30.809455992 +0200
-@@ -5,10 +5,10 @@
+--- libiconv-1.11/po/pl.po.orig	2006-07-19 21:16:33.000000000 +0200
++++ libiconv-1.11/po/pl.po	2006-07-22 02:39:55.077937250 +0200
+@@ -5,19 +5,20 @@
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: libiconv 1.9.1\n"
-+"Project-Id-Version: libiconv 1.10\n"
++"Project-Id-Version: libiconv 1.11\n"
  "Report-Msgid-Bugs-To: bug-gnu-libiconv@gnu.org\n"
- "POT-Creation-Date: 2005-07-07 14:54+0200\n"
+ "POT-Creation-Date: 2006-07-19 21:16+0200\n"
 -"PO-Revision-Date: 2003-10-13 22:56+0100\n"
-+"PO-Revision-Date: 2005-08-14 17:33+0200\n"
- "Last-Translator: Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>\n"
+-"Last-Translator: Arkadiusz Lipiec <A.Lipiec@elka.pw.edu.pl>\n"
++"PO-Revision-Date: 2006-07-22 02:34+0200\n"
++"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
-@@ -39,19 +39,19 @@
- msgstr "Napisane przez %s.\n"
+ "Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
  
- #: src/iconv.c:131 src/iconv.c:171 src/iconv.c:232
--#, fuzzy, c-format
-+#, c-format
- msgid "iconv: %s:%u:%u: incomplete character or shift sequence\n"
--msgstr "iconv: %s: niedokoñczony znak lub sekwencja shift\n"
-+msgstr "iconv: %s:%u:%u: niedokoñczony znak lub sekwencja shift\n"
+ #: src/iconv.c:107
+ msgid "Usage: iconv [-c] [-s] [-f fromcode] [-t tocode] [file ...]"
+-msgstr "U¿ycie: iconv [-c] [-s] [f z_kodu] [-t do_kodu] [plik ...]"
++msgstr "Sk³adnia: iconv [-c] [-s] [f z_kodu] [-t do_kodu] [plik ...]"
  
- #: src/iconv.c:161 src/iconv.c:223
--#, fuzzy, c-format
-+#, c-format
- msgid "iconv: %s:%u:%u: cannot convert\n"
--msgstr "iconv: %s: nie mo¿na skonwertowaæ\n"
-+msgstr "iconv: %s:%u:%u: nie mo¿na skonwertowaæ\n"
- 
- #: src/iconv.c:191 src/iconv.c:241
--#, fuzzy, c-format
-+#, c-format
- msgid "iconv: %s:%u:%u: "
--msgstr "iconv: %s: "
-+msgstr "iconv: %s:%u:%u: "
- 
- #: src/iconv.c:253
+ #: src/iconv.c:109
+ msgid "or:    iconv -l"
+@@ -26,27 +27,27 @@
+ #: src/iconv.c:111
  #, c-format
-@@ -76,7 +76,7 @@
+ msgid "Try `%s --help' for more information.\n"
+-msgstr ""
++msgstr "`%s --help' poka¿e wiêcej informacji.\n"
+ 
+ #: src/iconv.c:114
+ #, c-format, no-wrap
+ msgid "Usage: %s [OPTION...] [-f ENCODING] [-t ENCODING] [INPUTFILE...]\n"
+-msgstr ""
++msgstr "Sk³adnia: %s [OPCJA...] [-f KODOWANIE] [-t KODOWANIE] [PLIK_WEJ...]\n"
+ 
+ #: src/iconv.c:118
+-#, fuzzy, c-format, no-wrap
++#, c-format, no-wrap
+ msgid "or:    %s -l\n"
+-msgstr "lub:    iconv -l"
++msgstr "lub:    %s -l\n"
+ 
+ #: src/iconv.c:123
+ #, c-format, no-wrap
+ msgid "Converts text from one encoding to another encoding.\n"
+-msgstr ""
++msgstr "Konwersja tekstu z jednego kodowania do innego.\n"
+ 
+ #: src/iconv.c:127
+ #, c-format, no-wrap
+ msgid "Options controlling the input and output format:\n"
+-msgstr ""
++msgstr "Opcje steruj±ce formatem wej¶cia i wyj¶cia:\n"
+ 
+ #: src/iconv.c:130
+ #, c-format, no-wrap
+@@ -54,6 +55,8 @@
+ "  -f ENCODING, --from-code=ENCODING\n"
+ "                              the encoding of the input\n"
+ msgstr ""
++"  -f KODOWANIE, --from-code=KODOWANIE\n"
++"                              kodowanie wej¶cia\n"
+ 
+ #: src/iconv.c:134
+ #, c-format, no-wrap
+@@ -61,16 +64,18 @@
+ "  -t ENCODING, --to-code=ENCODING\n"
+ "                              the encoding of the output\n"
+ msgstr ""
++"  -t KODOWANIE, --to-code=KODOWANIE\n"
++"                              kodowanie wyj¶cia\n"
+ 
+ #: src/iconv.c:139
+ #, c-format, no-wrap
+ msgid "Options controlling conversion problems:\n"
+-msgstr ""
++msgstr "Opcje steruj±ce zagadnieniami konwersji:\n"
+ 
+ #: src/iconv.c:142
+ #, c-format, no-wrap
+ msgid "  -c                          discard unconvertible characters\n"
+-msgstr ""
++msgstr "  -c                          pominiêcie niekonwertowalnych znaków\n"
+ 
+ #: src/iconv.c:145
+ #, c-format, no-wrap
+@@ -78,11 +83,13 @@
+ "  --unicode-subst=FORMATSTRING\n"
+ "                              substitution for unconvertible Unicode characters\n"
+ msgstr ""
++"  --unicode-subst=£AÑCUCH_FORMATUJ¡CY\n"
++"                              zamiennik dla niekonwertowalnych znaków Unicode\n"
+ 
+ #: src/iconv.c:149
+ #, c-format, no-wrap
+ msgid "  --byte-subst=FORMATSTRING   substitution for unconvertible bytes\n"
+-msgstr ""
++msgstr "  --byte-subst=£AÑCUCH_FORMATUJ¡CY   zamiennik dla niekonwertowalnych bajtów\n"
+ 
+ #: src/iconv.c:152
+ #, c-format, no-wrap
+@@ -90,40 +97,42 @@
+ "  --widechar-subst=FORMATSTRING\n"
+ "                              substitution for unconvertible wide characters\n"
+ msgstr ""
++"  --widechar-subst=£AÑCUCH_FORMATUJ¡CY\n"
++"                              zamiennik dla niekonwertowalnych znaków szerokich\n"
+ 
+ #: src/iconv.c:157
+ #, c-format, no-wrap
+ msgid "Options controlling error output:\n"
+-msgstr ""
++msgstr "Opcje steruj±ce wyj¶ciem b³êdów:\n"
+ 
+ #: src/iconv.c:160
+ #, c-format, no-wrap
+ msgid "  -s, --silent                suppress error messages about conversion problems\n"
+-msgstr ""
++msgstr "  -s, --silent                pominiêcie komunikatów b³êdów dotycz±cych konwersji\n"
+ 
+ #: src/iconv.c:164
+ #, c-format, no-wrap
+ msgid "Informative output:\n"
+-msgstr ""
++msgstr "Wyj¶cie informacyjne:\n"
+ 
+ #: src/iconv.c:167
+ #, c-format, no-wrap
+ msgid "  -l, --list                  list the supported encodings\n"
+-msgstr ""
++msgstr "  -l, --list                  wypisanie obs³ugiwanych kodowañ\n"
+ 
+ #: src/iconv.c:170
+ #, c-format, no-wrap
+ msgid "  --help                      display this help and exit\n"
+-msgstr ""
++msgstr "  --help                      wy¶wietlenie tego opisu i zakoñczenie\n"
+ 
+ #: src/iconv.c:173
+ #, c-format, no-wrap
+ msgid "  --version                   output version information and exit\n"
+-msgstr ""
++msgstr "  --version                   wy¶wietlenie informacji o wersji i zakoñczenie\n"
+ 
+ #: src/iconv.c:176
+ msgid "Report bugs to <bug-gnu-libiconv@gnu.org>.\n"
+-msgstr ""
++msgstr "B³êdy proszê zg³aszaæ na adres <bug-gnu-libiconv@gnu.org>.\n"
+ 
+ #: src/iconv.c:186
+ #, c-format
+@@ -144,36 +153,36 @@
+ #, c-format
+ msgid ""
+ "%s argument: A format directive with a variable width is not allowed here."
+-msgstr ""
++msgstr "Argument %s: dyrektywa formatuj±ca o zmiennej szeroko¶ci nie jest tutaj dozwolona."
+ 
+ #: src/iconv.c:291
+ #, c-format
+ msgid ""
+ "%s argument: A format directive with a variable precision is not allowed "
+ "here."
+-msgstr ""
++msgstr "Argument %s: dyrektywa formatuj±ca o zmiennej precyzji nie jest tutaj dozwolona."
+ 
+ #: src/iconv.c:303
+ #, c-format
+ msgid "%s argument: A format directive with a size is not allowed here."
+-msgstr ""
++msgstr "Argument %s: dyrektywa formatuj±ca z rozmiarem nie jest tutaj dozwolona."
+ 
+ #: src/iconv.c:341
+ #, c-format
+ msgid "%s argument: The string ends in the middle of a directive."
+-msgstr ""
++msgstr "Argument %s: ³añcuch koñczy siê w ¶rodku dyrektywy."
+ 
+ #: src/iconv.c:343
+ #, c-format
+ msgid "%s argument: The character '%c' is not a valid conversion specifier."
+-msgstr ""
++msgstr "Argument %s: znak '%c' nie jest poprawnym okre¶leniem konwersji."
+ 
+ #: src/iconv.c:345
+ #, c-format
+ msgid ""
+ "%s argument: The character that terminates the format directive is not a "
+ "valid conversion specifier."
+-msgstr ""
++msgstr "Argument %s: znak koñcz±cy dyrektywê formatuj±c± nie jest poprawnym okre¶leniem konwersji."
+ 
  #: src/iconv.c:356
  #, c-format
- msgid "iconv: try '%s -l' to get the list of supported encodings\n"
--msgstr ""
-+msgstr "iconv: listê obs³ugiwanych kodowañ mo¿na uzyskaæ przez '%s -l'\n"
+@@ -181,73 +190,74 @@
+ "%s argument: The format string consumes more than one argument: %u argument."
+ msgid_plural ""
+ "%s argument: The format string consumes more than one argument: %u arguments."
+-msgstr[0] ""
+-msgstr[1] ""
++msgstr[0] "Argument %s: ³añcuch formatuj±cy pobiera wiêcej ni¿ jeden argument: %u argument."
++msgstr[1] "Argument %s: ³añcuch formatuj±cy pobiera wiêcej ni¿ jeden argument: %u argumenty."
++msgstr[2] "Argument %s: ³añcuch formatuj±cy pobiera wiêcej ni¿ jeden argument: %u argumentów."
  
- #: src/iconv.c:370
- msgid "(stdin)"
-@@ -91,8 +91,3 @@
+ #: src/iconv.c:411
  #, c-format
- msgid "iconv: I/O error\n"
- msgstr "iconv: b³±d wej./wyj.\n"
+ msgid "cannot convert byte substitution to Unicode: %s"
+-msgstr ""
++msgstr "nie mo¿na przekonwertowaæ zamiennika bajtu na Unicode: %s"
+ 
+ #: src/iconv.c:447
+ #, c-format
+ msgid "cannot convert unicode substitution to target encoding: %s"
+-msgstr ""
++msgstr "nie mo¿na przekonwertowaæ zamiennika unicode na kodowanie docelowe: %s"
+ 
+ #: src/iconv.c:484
+ #, c-format
+ msgid "cannot convert byte substitution to wide string: %s"
+-msgstr ""
++msgstr "nie mo¿na przekonwertowaæ zamiennika bajtu na ³añcuch szeroki: %s"
+ 
+ #: src/iconv.c:521
+ #, c-format
+ msgid "cannot convert widechar substitution to target encoding: %s"
+-msgstr ""
++msgstr "nie mo¿na przekonwertowaæ zamiennika znaku szerokiego na kodowanie docelowe: %s"
+ 
+ #: src/iconv.c:558
+ #, c-format
+ msgid "cannot convert byte substitution to target encoding: %s"
+-msgstr ""
++msgstr "nie mo¿na przekonwertowaæ zamiennika bajtu na kodowanie docelowe: %s"
+ 
+ #: src/iconv.c:592 src/iconv.c:636 src/iconv.c:710
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s:%u:%u: incomplete character or shift sequence"
+-msgstr "iconv: %s: niedokoñczony znak lub sekwencja shift\n"
++msgstr "%s:%u:%u niedokoñczony znak lub sekwencja shift"
+ 
+ #: src/iconv.c:625 src/iconv.c:700
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s:%u:%u: cannot convert"
+-msgstr "iconv: %s: nie mo¿na skonwertowaæ\n"
++msgstr "%s:%u:%u: nie mo¿na skonwertowaæ"
+ 
+ #: src/iconv.c:667 src/iconv.c:730
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s:%u:%u"
+-msgstr "iconv: %s: "
++msgstr "%s:%u:%u"
+ 
+ #: src/iconv.c:742
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s: I/O error"
+-msgstr "iconv: %s: b³±d wej./wyj.\n"
++msgstr "%s: b³±d wej./wyj."
+ 
+ #: src/iconv.c:926
+-#, fuzzy, c-format
++#, c-format
+ msgid "conversion from %s unsupported"
+-msgstr "iconv: konwersja z kodu %s jest nieobs³ugiwana\n"
++msgstr "konwersja z kodu %s jest nieobs³ugiwana"
+ 
+ #: src/iconv.c:928
+-#, fuzzy, c-format
++#, c-format
+ msgid "conversion to %s unsupported"
+-msgstr "iconv: konwersja do kodu %s jest nieobs³ugiwana\n"
++msgstr "konwersja do kodu %s jest nieobs³ugiwana"
+ 
+ #: src/iconv.c:930
+-#, fuzzy, c-format
++#, c-format
+ msgid "conversion from %s to %s unsupported"
+-msgstr "iconv: konwersja z kodu %s do kodu %s jest nieobs³ugiwana\n"
++msgstr "konwersja z kodu %s do kodu %s jest nieobs³ugiwana"
+ 
+ #: src/iconv.c:931
+ #, c-format
+ msgid "try '%s -l' to get the list of supported encodings"
+-msgstr ""
++msgstr "'%s -l' poda listê obs³ugiwanych kodowañ"
+ 
+ #: src/iconv.c:985
+ msgid "(stdin)"
+@@ -256,17 +266,9 @@
+ #: src/iconv.c:993
+ #, c-format
+ msgid "%s"
+-msgstr ""
++msgstr "%s"
+ 
+ #: src/iconv.c:1004
+-#, fuzzy, c-format
++#, c-format
+ msgid "I/O error"
+-msgstr "iconv: b³±d wej./wyj.\n"
+-
+-#~ msgid "iconv: %s: "
+-#~ msgstr "iconv: %s: "
 -
 -#~ msgid ""
 -#~ "Usage: iconv [--binary] [-c] [-s] [-f fromcode] [-t tocode] [file ...]"
 -#~ msgstr ""
 -#~ "U¿ycie: iconv [--binary] [-c] [-s] [-f z_kodu] [-t do_kodu] [plik ...]"
++msgstr "b³±d wej./wyj."
