@@ -1,5 +1,5 @@
 Summary:	Character set conversion library
-Summary(pl):	Biblioteka konwersji zestawów znaków
+Summary(pl.UTF-8):   Biblioteka konwersji zestawÃ³w znakÃ³w
 Name:		libiconv
 Version:	1.11
 Release:	1
@@ -19,14 +19,14 @@ This library provides an iconv() implementation, for use on systems
 which don't have one, or whose implementation cannot convert from/to
 Unicode.
 
-%description -l pl
-Ta biblioteka dostarcza implementacjê iconv() do u¿ywania z systemami,
-które takiej funkcji nie posiadaj±, lub na których implementacja nie
-potrafi konwertowaæ z/do Unikodu.
+%description -l pl.UTF-8
+Ta biblioteka dostarcza implementacjÄ™ iconv() do uÅ¼ywania z systemami,
+ktÃ³re takiej funkcji nie posiadajÄ…, lub na ktÃ³rych implementacja nie
+potrafi konwertowaÄ‡ z/do Unikodu.
 
 %package devel
 Summary:	libiconv header files
-Summary(pl):	Pliki nag³ówkowe biblioteki libiconv
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libiconv
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 %if "%{_includedir}" == "/usr/include"
@@ -36,20 +36,20 @@ Conflicts:	glibc-devel
 %description devel
 This package contains libiconv header files.
 
-%description devel -l pl
-Pakiet ten zawiera pliki nag³ówkowe biblioteki libiconv.
+%description devel -l pl.UTF-8
+Pakiet ten zawiera pliki nagÅ‚Ã³wkowe biblioteki libiconv.
 
 %package static
 Summary:	libiconv static library
-Summary(pl):	Statyczna biblioteka libiconv
+Summary(pl.UTF-8):   Statyczna biblioteka libiconv
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 This package contains static libiconv library.
 
-%description static -l pl
-Pakiet ten zawiera statyczn± bibliotekê libiconv.
+%description static -l pl.UTF-8
+Pakiet ten zawiera statycznÄ… bibliotekÄ™ libiconv.
 
 %prep
 %setup -q
