@@ -1,5 +1,5 @@
 Summary:	Character set conversion library
-Summary(pl.UTF-8):   Biblioteka konwersji zestawów znaków
+Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
 Version:	1.11
 Release:	1
@@ -26,7 +26,7 @@ potrafi konwertować z/do Unikodu.
 
 %package devel
 Summary:	libiconv header files
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libiconv
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libiconv
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 %if "%{_includedir}" == "/usr/include"
@@ -41,7 +41,7 @@ Pakiet ten zawiera pliki nagłówkowe biblioteki libiconv.
 
 %package static
 Summary:	libiconv static library
-Summary(pl.UTF-8):   Statyczna biblioteka libiconv
+Summary(pl.UTF-8):	Statyczna biblioteka libiconv
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
