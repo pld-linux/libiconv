@@ -1,15 +1,15 @@
 Summary:	Character set conversion library
 Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.11
+Version:	1.12
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	b77a17e4a5a817100ad4b2613935055e
+# Source0-md5:	c2be282595751535a618ae0edeb8f648
 Patch0:		%{name}-pl.po-update.patch
 URL:		http://www.haible.de/bruno/packages-libcharset.html
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,6 +51,21 @@ This package contains static libiconv library.
 %description static -l pl.UTF-8
 Pakiet ten zawiera statyczną bibliotekę libiconv.
 
+%package utils
+Summary:	iconv utility
+Summary(pl.UTF-8):	Narzędzie iconv
+Group:		Applications/Text
+Requires:	%{name} = %{version}-%{release}
+%if "%{_bindir}" == "/usr/bin"
+Conflicts:	glibc-misc
+%endif
+
+%description utils
+iconv utility.
+
+%description utils -l pl.UTF-8
+Narzędzie iconv.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -58,9 +73,9 @@ Pakiet ten zawiera statyczną bibliotekę libiconv.
 rm -f po/stamp-po
 
 %build
-cp -f /usr/share/automake/config.sub libcharset/autoconf
-cp -f /usr/share/automake/config.sub autoconf
-%{__aclocal} -I m4
+cp -f /usr/share/automake/config.sub build-aux
+cp -f /usr/share/automake/config.sub libcharset/build-aux
+%{__aclocal} -I m4 -I srcm4
 %{__autoconf}
 %configure
 %{__make}
@@ -82,11 +97,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog DESIGN NEWS NOTES PORTS README* THANKS
-#%attr(755,root,root) %{_bindir}/iconv
 %attr(755,root,root) %{_libdir}/libcharset.so.*.*.*
 %attr(755,root,root) %{_libdir}/libiconv.so.*.*.*
 %attr(755,root,root) %{_libdir}/preloadable_libiconv.so
-#%{_mandir}/man1/iconv.1*
 
 %files devel
 %defattr(644,root,root,755)
@@ -102,3 +115,8 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libcharset.a
+
+%files utils
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/iconv
+%{_mandir}/man1/iconv.1*
