@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
 Version:	1.12
 Release:	1
-License:	GPL v2+
+License:	LGPL v2+
 Group:		Libraries
 Source0:	ftp://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
 # Source0-md5:	c2be282595751535a618ae0edeb8f648
@@ -54,6 +54,7 @@ Pakiet ten zawiera statyczną bibliotekę libiconv.
 %package utils
 Summary:	iconv utility
 Summary(pl.UTF-8):	Narzędzie iconv
+License:	GPL v3+
 Group:		Applications/Text
 Requires:	%{name} = %{version}-%{release}
 %if "%{_bindir}" == "/usr/bin"
