@@ -5,7 +5,7 @@ Version:	1.12
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	ftp://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
 # Source0-md5:	c2be282595751535a618ae0edeb8f648
 Patch0:		%{name}-pl.po-update.patch
 URL:		http://www.haible.de/bruno/packages-libcharset.html
