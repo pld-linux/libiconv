@@ -1,12 +1,12 @@
 Summary:	Character set conversion library
 Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.12
+Version:	1.13
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	c2be282595751535a618ae0edeb8f648
+# Source0-md5:	048032a3032ebd182150bdee30a5d533
 Patch0:		%{name}-pl.po-update.patch
 URL:		http://www.haible.de/bruno/packages-libcharset.html
 BuildRequires:	autoconf >= 2.60
@@ -99,7 +99,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog DESIGN NEWS NOTES PORTS README* THANKS
 %attr(755,root,root) %{_libdir}/libcharset.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libcharset.so.1
 %attr(755,root,root) %{_libdir}/libiconv.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libiconv.so.2
 %attr(755,root,root) %{_libdir}/preloadable_libiconv.so
 
 %files devel
