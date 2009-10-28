@@ -8,7 +8,7 @@ Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
 # Source0-md5:	7ab33ebd26687c744a37264a330bbe9a
 Patch0:		%{name}-pl.po-update.patch
-URL:		http://www.haible.de/bruno/packages-libcharset.html
+URL:		http://www.gnu.org/software/libiconv/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
