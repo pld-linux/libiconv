@@ -1,5 +1,5 @@
---- libiconv-1.13/po/pl.po.orig	2009-03-26 13:12:01.000000000 +0100
-+++ libiconv-1.13/po/pl.po	2009-04-11 10:23:04.585719673 +0200
+--- libiconv-1.13.1/po/pl.po.orig	2009-06-30 22:53:02.000000000 +0200
++++ libiconv-1.13.1/po/pl.po	2009-10-28 07:19:21.172444165 +0100
 @@ -2,14 +2,14 @@
  # Copyright (C) 2003, 2006 Free Software Foundation, Inc.
  # This file is distributed under the same license as the libiconv package.
@@ -10,11 +10,11 @@
  msgid ""
  msgstr ""
 -"Project-Id-Version: libiconv 1.12\n"
-+"Project-Id-Version: libiconv 1.13\n"
++"Project-Id-Version: libiconv 1.13.1\n"
  "Report-Msgid-Bugs-To: bug-gnu-libiconv@gnu.org\n"
- "POT-Creation-Date: 2009-03-26 13:12+0100\n"
+ "POT-Creation-Date: 2009-06-30 22:53+0200\n"
 -"PO-Revision-Date: 2007-12-26 23:20+0100\n"
-+"PO-Revision-Date: 2009-04-11 10:21+0200\n"
++"PO-Revision-Date: 2009-10-28 07:16+0100\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
