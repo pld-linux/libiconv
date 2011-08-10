@@ -1,27 +1,29 @@
---- libiconv-1.13.1/po/pl.po.orig	2009-06-30 22:53:02.000000000 +0200
-+++ libiconv-1.13.1/po/pl.po	2009-10-28 07:19:21.172444165 +0100
-@@ -2,14 +2,14 @@
- # Copyright (C) 2003, 2006 Free Software Foundation, Inc.
+--- libiconv-1.14/po/pl.po.orig	2011-08-07 19:48:03.000000000 +0200
++++ libiconv-1.14/po/pl.po	2011-08-10 17:05:59.956544169 +0200
+@@ -1,15 +1,15 @@
+ # Polish translation for libiconv.
+-# Copyright (C) 2003, 2006 Free Software Foundation, Inc.
++# Copyright (C) 2003, 2006, 2011 Free Software Foundation, Inc.
  # This file is distributed under the same license as the libiconv package.
  # Arkadiusz Lipiec <alipiec@elka.pw.edu.pl>, 2003.
 -# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2007.
-+# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2009.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2011.
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: libiconv 1.12\n"
-+"Project-Id-Version: libiconv 1.13.1\n"
++"Project-Id-Version: libiconv 1.14\n"
  "Report-Msgid-Bugs-To: bug-gnu-libiconv@gnu.org\n"
- "POT-Creation-Date: 2009-06-30 22:53+0200\n"
+ "POT-Creation-Date: 2011-08-07 15:24+0200\n"
 -"PO-Revision-Date: 2007-12-26 23:20+0100\n"
-+"PO-Revision-Date: 2009-10-28 07:16+0100\n"
++"PO-Revision-Date: 2011-08-10 17:02+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
-@@ -151,13 +151,13 @@
+@@ -151,17 +151,16 @@
  msgstr "B³êdy proszê zg³aszaæ na adres <bug-gnu-libiconv@gnu.org>.\n"
  
- #: src/iconv.c:195
+ #: src/iconv.c:196
 -#, fuzzy, no-wrap
 +#, no-wrap
  msgid ""
@@ -30,7 +32,12 @@
  "There is NO WARRANTY, to the extent permitted by law.\n"
  msgstr ""
 -"Licencja GPLv2+: GNU GPL wersja 2 lub pó¼niejsza <http://gnu.org/licenses/gpl.html>\n"
+-"To jest oprogramowanie wolnodostêpne: mo¿na je modyfikowaæ i rozpowszechniaæ.\n"
 +"Licencja GPLv3+: GNU GPL wersja 3 lub pó¼niejsza <http://gnu.org/licenses/gpl.html>\n"
- "To jest oprogramowanie wolnodostêpne: mo¿na je modyfikowaæ i rozpowszechniaæ.\n"
++"To oprogramowanie jest wolnodostêpne: mo¿na je modyfikowaæ i rozpowszechniaæ.\n"
  "Nie ma ¯ADNEJ GWARANCJI w zakresie dopuszczalnym przez prawo.\n"
  
+-# s TRANSLATORS: The %s placeholder expands to an author's name.
+ #. TRANSLATORS: The %s placeholder expands to an author's name.
+ #: src/iconv.c:202
+ #, c-format

@@ -1,17 +1,17 @@
 Summary:	Character set conversion library
 Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.13.1
+Version:	1.14
 Release:	1
-License:	LGPL v2+
+License:	LGPL v3+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	7ab33ebd26687c744a37264a330bbe9a
+# Source0-md5:	e34509b1623cec449dfeb73d7ce9c6c6
 Patch0:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/libiconv/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -71,13 +71,16 @@ Narzędzie iconv.
 %setup -q
 %patch0 -p1
 
-rm -f po/stamp-po
+%{__rm} po/stamp-po
 
 %build
 cp -f /usr/share/automake/config.sub build-aux
 cp -f /usr/share/automake/config.sub libcharset/build-aux
+%{__libtoolize}
 %{__aclocal} -I m4 -I srcm4
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -97,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog DESIGN NEWS NOTES PORTS README* THANKS
+%doc AUTHORS ChangeLog DESIGN NEWS NOTES PORTS README THANKS
 %attr(755,root,root) %{_libdir}/libcharset.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libcharset.so.1
 %attr(755,root,root) %{_libdir}/libiconv.so.*.*.*
