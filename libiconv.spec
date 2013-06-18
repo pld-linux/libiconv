@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
 # Source0-md5:	e34509b1623cec449dfeb73d7ce9c6c6
 Patch0:		%{name}-pl.po-update.patch
+Patch1:		gets-undefined-in-C11.patch
 URL:		http://www.gnu.org/software/libiconv/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -70,6 +71,7 @@ Narzędzie iconv.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %{__rm} po/stamp-po
 
