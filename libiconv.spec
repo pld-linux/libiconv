@@ -73,9 +73,25 @@ Narzędzie iconv.
 
 %{__rm} po/stamp-po
 
+# struggling to get it regenerated, but i fail, these still remain:
+#-rw-r--r-- 1 glen users 281073 24. sept   2010 ./libcharset/m4/libtool.m4
+#-rw-r--r-- 1 glen users 281073 24. sept   2010 ./m4/libtool.m4
+rm libcharset/m4/{libtool,lt*}.m4
+rm m4/{libtool,lt*}.m4
+
 %build
 cp -f /usr/share/automake/config.sub build-aux
 cp -f /usr/share/automake/config.sub libcharset/build-aux
+cd preload
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+cd ../libcharset
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+cd ..
 %{__libtoolize}
 %{__aclocal} -I m4 -I srcm4
 %{__autoconf}
@@ -86,7 +102,6 @@ cp -f /usr/share/automake/config.sub libcharset/build-aux
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
