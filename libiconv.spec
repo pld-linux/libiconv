@@ -1,14 +1,13 @@
+# NOTE: don't send this (glibc based) build to builders
 Summary:	Character set conversion library
 Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.14
-Release:	1
+Version:	1.15
+Release:	0.1
 License:	LGPL v3+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	e34509b1623cec449dfeb73d7ce9c6c6
-Patch0:		%{name}-pl.po-update.patch
-Patch1:		gets-undefined-in-C11.patch
+# Source0-md5:	ace8b5f2db42f7b3b3057585e80d9808
 URL:		http://www.gnu.org/software/libiconv/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -70,16 +69,14 @@ Narzędzie iconv.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %{__rm} po/stamp-po
 
 # struggling to get it regenerated, but i fail, these still remain:
 #-rw-r--r-- 1 glen users 281073 24. sept   2010 ./libcharset/m4/libtool.m4
 #-rw-r--r-- 1 glen users 281073 24. sept   2010 ./m4/libtool.m4
-rm libcharset/m4/{libtool,lt*}.m4
-rm m4/{libtool,lt*}.m4
+%{__rm} libcharset/m4/{libtool,lt*}.m4
+%{__rm} m4/{libtool,lt*}.m4
 
 %build
 cp -f /usr/share/automake/config.sub build-aux
@@ -107,6 +104,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_docdir}/*.html
+
 %find_lang %{name}
 
 %clean
@@ -117,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog DESIGN NEWS NOTES PORTS README THANKS
+%doc AUTHORS ChangeLog DESIGN NEWS NOTES README THANKS
 %attr(755,root,root) %{_libdir}/libcharset.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libcharset.so.1
 %attr(755,root,root) %{_libdir}/libiconv.so.*.*.*
