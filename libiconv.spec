@@ -2,12 +2,12 @@
 Summary:	Character set conversion library
 Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.15
+Version:	1.16
 Release:	0.1
 License:	LGPL v3+
 Group:		Libraries
-Source0:	http://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	ace8b5f2db42f7b3b3057585e80d9808
+Source0:	https://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
+# Source0-md5:	7d2a800b952942bb2880efb00cfd524c
 URL:		http://www.gnu.org/software/libiconv/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -81,11 +81,7 @@ Narzędzie iconv.
 %build
 cp -f /usr/share/automake/config.sub build-aux
 cp -f /usr/share/automake/config.sub libcharset/build-aux
-cd preload
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-cd ../libcharset
+cd libcharset
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
@@ -121,7 +117,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libcharset.so.1
 %attr(755,root,root) %{_libdir}/libiconv.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libiconv.so.2
-%attr(755,root,root) %{_libdir}/preloadable_libiconv.so
 
 %files devel
 %defattr(644,root,root,755)
