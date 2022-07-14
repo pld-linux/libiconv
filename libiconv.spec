@@ -2,15 +2,16 @@
 Summary:	Character set conversion library
 Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.16
+Version:	1.17
 Release:	0.1
-License:	LGPL v3+
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	7d2a800b952942bb2880efb00cfd524c
+# Source0-md5:	d718cd5a59438be666d1575855be72c3
 URL:		http://www.gnu.org/software/libiconv/
-BuildRequires:	autoconf >= 2.60
+BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake
+BuildRequires:	gettext-tools
 BuildRequires:	libtool >= 2:2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
