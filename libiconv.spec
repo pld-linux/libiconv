@@ -2,12 +2,12 @@
 Summary:	Character set conversion library
 Summary(pl.UTF-8):	Biblioteka konwersji zestawów znaków
 Name:		libiconv
-Version:	1.17
+Version:	1.18
 Release:	0.1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://ftp.gnu.org/gnu/libiconv/%{name}-%{version}.tar.gz
-# Source0-md5:	d718cd5a59438be666d1575855be72c3
+# Source0-md5:	1af69958b42981d3c3029ffb4c7ebaed
 URL:		http://www.gnu.org/software/libiconv/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake
@@ -84,7 +84,7 @@ cp -f /usr/share/automake/config.sub build-aux
 cp -f /usr/share/automake/config.sub libcharset/build-aux
 cd libcharset
 %{__libtoolize}
-%{__aclocal} -I m4
+%{__aclocal} -I m4 -I ../srcm4
 %{__autoconf}
 %{__autoheader}
 cd ..
@@ -98,6 +98,7 @@ cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
